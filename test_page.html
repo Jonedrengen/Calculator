@@ -1,18 +1,40 @@
 
 <!--creating a simple webpage for a calculator-->
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html> 
 <head> <!--head section of the page, where we put metadata and links to external files, such as our css and js files-->
     <title>Calculator</title> 
     <link rel="stylesheet" type="text/css" href="styles.css">  
     <script src="script.js"></script> 
 </head>
-<body>
+<body> 
     <!--main content of body goes here-->
     <h1>Calculator</h1>
-    <button type="button" class="blueButton"> Click me! </button>
-    <button type="button" class="genericButton"> Click me! </button>
-    <p>simple page</p>
+    <input type="text" id="input" placeholder="enter number">
+    <div class="button-row-div"> <!--a div is used to group stuff together-->
+        <button type="button" class="genericButton"> 1 </button>
+        <button type="button" class="genericButton"> 2 </button>
+        <button type="button" class="genericButton"> 3 </button>
+        <button type="button" class="blueButton"> + </button>
+    </div>
+    <div class="button-row-div">
+    <button type="button" class="genericButton"> 4 </button>
+    <button type="button" class="genericButton"> 5 </button>
+    <button type="button" class="genericButton"> 6 </button>
+    <button type="button" class="blueButton"> - </button>
+    </div>
+    <div class="button-row-div">
+        <button type="button" class="genericButton"> 7 </button>
+        <button type="button" class="genericButton"> 8 </button>
+        <button type="button" class="genericButton"> 9 </button>
+        <button type="button" class="blueButton"> * </button>
+    </div>
+    <div class="button-row-div">
+        <button type="button" class="genericButton"> x </button>
+        <button type="button" class="genericButton"> 0 </button>
+        <button type="button" class="genericButton"> = </button>
+        <button type="button" class="blueButton"> / </button>
+    </div>
 </body>
 </html>
 

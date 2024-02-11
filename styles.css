@@ -1,14 +1,17 @@
+/* Button costumizations */
 /* simple button costumization */
-.blueButton {
+.blueButtonWierd {
     background-color: rgba(7, 28, 85, 0.658);
     color: #212121; /* text color */
-    padding: 10px 20px;
+    padding: 10px 20px; /* this is how much space there is between the text and the border */
     border-radius: 30px; /* this is how round the corners are */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    
+    width: 40px;  
+    height: 40px;  
+    text-align: center;
 }
 /* hover effect */
-.blueButton:hover {
+.blueButtonWierd:hover {
     background-color: rgba(58, 46, 90, 0.8);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -16,12 +19,36 @@
 .genericButton {
     background-color: rgba(0, 0, 0, 0.658);
     color: #fff; 
-    padding: 10px 5px;
+    padding: 10px 15px;
     border-radius: 10px; 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    
+    width: 40px;  
+    height: 40px;  
+    text-align: center;
 }
 .genericButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.blueButton {
+    background-color: rgba(33, 12, 128, 0.521);
+    color: #fff; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 40px;  
+    height: 40px;  
+    text-align: center;
+    
+}
+.blueButton:hover {
+    background-color: rgba(29, 17, 138, 0.8);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* div costumizations */
+.button-row-div {
+    justify-content: space-around; /* this is how the buttons are spaced */
+    margin-top: 10px; /* space to closet element above */
 }
