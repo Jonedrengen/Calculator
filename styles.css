@@ -1,0 +1,9 @@
+/* simple button costumization */
+.myButoon {
+    background-color: rgba(58, 46, 90, 0.576);
+    color: rgba(48, 73, 90, 0.637);
+    padding: 10px 20px;
+    border-radius: 75px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
