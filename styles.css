@@ -1,9 +1,27 @@
 /* simple button costumization */
-.myButoon {
-    background-color: rgba(58, 46, 90, 0.576);
-    color: rgba(48, 73, 90, 0.637);
+.blueButton {
+    background-color: rgba(7, 28, 85, 0.658);
+    color: #212121; /* text color */
     padding: 10px 20px;
-    border-radius: 75px;
+    border-radius: 30px; /* this is how round the corners are */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     
+}
+/* hover effect */
+.blueButton:hover {
+    background-color: rgba(58, 46, 90, 0.8);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.genericButton {
+    background-color: rgba(0, 0, 0, 0.658);
+    color: #fff; 
+    padding: 10px 5px;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+.genericButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
