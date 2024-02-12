@@ -1,14 +1,28 @@
-// FILEPATH: /C:/Users/Ole_S/OneDrive/Dokumenter/GitHub/Calculator/script.js
+// javascript file for the calculator app
 
+// the following is code to make the buttons add their numbers to the input field
+// the following is code to make the buttons add their numbers to the input field
+// the following is code to make the buttons add their numbers to the input field
 
-// get input values
-var inputNumber = document.getElementById('inputNumber');
-console.log(inputNumber.value);
+// getting the input element
+var inputField = document.getElementById("inputNumber"); 
+console.log(inputField);
+// getting all the buttons
+var buttons = document.getElementsByClassName("genericButton")
+console.log(buttons.length);
 
-inputField =
-
-// 1. Create a function that takes two numbers and returns the sum of those numbers
-function add(a, b) {
-    return a + b;
+// function that add numbers from buttons to the input field
+function addNumberToInput(num) {
+    inputField.value = (Number(inputField.value) + num).toSting();
+    console.log(typeof inputField);
 }
+
+// adding a listener to each button
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+        // Call the function to add the number to the input field
+        addNumberToInput(Number(this.value));
+    });
+}
+
 
