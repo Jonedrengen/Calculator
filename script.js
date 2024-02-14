@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var numberButtons = document.getElementsByClassName("genericButton number");
     console.table({ 'array buttons length': numberButtons.length, 'buttons type': typeof numberButtons });
 
-    var plusButton = document.getElementsByClassName("blueButton +")
-    console.log("plusButton = " + plusButton[0].value); // plusButton[0] is the first element in the array of plusButton
-
+    
     // function that add numbers from buttons to the input field
     function addNumberToInput(num) {
         if (inputField.value === "0") {
@@ -28,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var storedNumber = null;
     var nextOperation = null;
     // function takes first number and stores it and resets the input field
-    function handleAdditionButtonClick() {
+    function AdditionButtonClick() {
         storedNumber = Number(inputField.value); // store number pressed before the operation
         console.log("current number = " + storedNumber);
         nextOperation = "addition"; // set the next operation to addition
@@ -37,10 +35,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // adding listener to addition button
-    document.getElementsByClassName("blueButton +")[0].addEventListener("click", handleAdditionButtonClick); // exstracting first index of the collection (getElementsByClassName returns collection of html elements)
+    document.getElementsByClassName("blueButton +")[0].addEventListener("click", AdditionButtonClick); // exstracting first index of the collection (getElementsByClassName returns collection of html elements)
 
     // Function to handle the click event for the "=" button
-    function handleEqualsButtonClick() {
+    function EqualsButtonClick() {
         // Perform the next operation
         if (nextOperation === "addition") {
             inputField.value = storedNumber + Number(inputField.value);
@@ -52,13 +50,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         nextOperation = null;
     }
     // Add the event listener to the "=" button
-    document.getElementsByClassName("genericButton =")[0].addEventListener('click', handleEqualsButtonClick);
+    document.getElementsByClassName("genericButton =")[0].addEventListener('click', EqualsButtonClick);
 
     // adding a listener to each button
     for (var i = 0; i < numberButtons.length; i++) { // loop through all the buttons, start from 0 and end at the length of the buttons (i < buttons.length) (i++ means increment by 1)
         numberButtons[i].addEventListener('click', function() { // add an event listener to each button, where the event is a click
             addNumberToInput(Number(this.value)); // every click will call the addNumberToInput function
-            console.log('value of button added = ' + this.value);
         });
     }
 });
