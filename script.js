@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var storedNumber = null;
     var nextOperation = null;
     // function takes first number and stores it and resets the input field
-    function AdditionButtonClick() {
+    function AdditionButtonClick() { // CAN MAYBE BE 1 FUNCTION FOR ALL OPERATIONS  
         storedNumber = Number(inputField.value); // store number pressed before the operation
         console.log("current number = " + storedNumber);
         nextOperation = "addition"; // set the next operation to addition
