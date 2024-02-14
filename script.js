@@ -21,6 +21,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         inputField.value = (Number(inputField.value) + num).toString(); // add the number from the button to the input field
     }
 
+    // creating variables for the current number and the next operation
+    var storedNumber = null;
+    var nextOperation = null;
+    // function takes first number and stores it and resets the input field
+    function handleAdditionButtonClick() {
+        storedNumber = Number(inputField.value); // store number pressed before the operation
+        console.log("current number = " + storedNumber);
+        nextOperation = "addition"; // set the next operation to addition
+        console.log("next operation = " + nextOperation);
+        inputField.value = 0; // reset input field
+    }
+
+    // adding listener to addition button
+    document.getElementsByClassName("blueButton +")[0].addEventListener("click", handleAdditionButtonClick); // exstracting first index of the collection (getElementsByClassName returns collection of html elements)
+
+
     // adding a listener to each button
     for (var i = 0; i < numberButtons.length; i++) { // loop through all the buttons, start from 0 and end at the length of the buttons (i < buttons.length) (i++ means increment by 1)
         numberButtons[i].addEventListener('click', function() { // add an event listener to each button, where the event is a click
@@ -29,4 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 });
+
+
+
 
