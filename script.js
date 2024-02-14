@@ -36,6 +36,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // adding listener to addition button
     document.getElementsByClassName("blueButton +")[0].addEventListener("click", handleAdditionButtonClick); // exstracting first index of the collection (getElementsByClassName returns collection of html elements)
 
+    // Function to handle the click event for the "=" button
+    function handleEqualsButtonClick() {
+        // Perform the next operation
+        if (nextOperation === "addition") {
+            inputField.value = storedNumber + Number(inputField.value);
+            console.log(inputField.value)
+        }    
+
+        // Reset
+        storedNumberNumber = null;
+        nextOperation = null;
+    }
+    // Add the event listener to the "=" button
+    document.getElementsByClassName("genericButton =")[0].addEventListener('click', handleEqualsButtonClick);
 
     // adding a listener to each button
     for (var i = 0; i < numberButtons.length; i++) { // loop through all the buttons, start from 0 and end at the length of the buttons (i < buttons.length) (i++ means increment by 1)
