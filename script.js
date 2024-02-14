@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // function that add numbers from buttons to the input field
     function addNumberToInput(num) {
-        inputField.value = 0; // reset the input field to 0
-        inputField.value = (Number(inputField.value) + num).toString(); // add the number from the button to the input field
+        if (inputField.value === "0") {
+            inputField.value = num.toString(); // set the input field to the number from the button
+        } else {
+            inputField.value += num.toString(); // concatenate the number from the button to the input field
+        }
     }
 
     // creating variables for the current number and the next operation
