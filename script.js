@@ -8,10 +8,13 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // getting the input element
     var inputField = document.getElementById("inputNumber"); 
-    // getting all the buttons
+    // getting all the numbered buttons
     var numberButtons = document.getElementsByClassName("genericButton number");
     console.table({ 'array buttons length': numberButtons.length, 'buttons type': typeof numberButtons });
-    console.table({ 'events': event });
+
+    var plusButton = document.getElementsByClassName("blueButton +")
+    console.log("plusButton = " + plusButton[0].value); // plusButton[0] is the first element in the array of plusButton
+
     // function that add numbers from buttons to the input field
     function addNumberToInput(num) {
         inputField.value = 0; // reset the input field to 0
