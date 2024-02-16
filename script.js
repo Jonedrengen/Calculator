@@ -5,7 +5,7 @@
 // the following is code to make the buttons add their numbers to the input field
 
 // adding an event listener to the document, which means that functions will be called when the document is fully loaded and not before
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function(event) {
     // getting the input element
     var inputField = document.getElementById("inputNumber"); 
     // getting all the numbered buttons
