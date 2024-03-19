@@ -46,7 +46,28 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
     document.getElementsByClassName("blueButton subtraction")[0].addEventListener("click", subtractionButtonClick);
 
+     // same as addition
+     function multiplicationButtonClick() {   
+        storedNumber = Number(mainInputNumber.value); // store number pressed before the operation
+        console.log("current number = " + storedNumber);
+        nextOperation = "multiplication"; // set the next operation to addition
+        console.log("next operation = " + nextOperation);
+        mainInputNumber.value = 0; // reset input field
+    }
+    document.getElementsByClassName("blueButton multiplication")[0].addEventListener("click", multiplicationButtonClick);
+    
+ // same as addition
+     function divisionButtonClick() {   
+        storedNumber = Number(mainInputNumber.value); // store number pressed before the operation
+        console.log("current number = " + storedNumber);
+        nextOperation = "division"; // set the next operation to addition
+        console.log("next operation = " + nextOperation);
+        mainInputNumber.value = 0; // reset input field
+    }
+    document.getElementsByClassName("blueButton division")[0].addEventListener("click", divisionButtonClick);
 
+    
+    
     // Function to handle the click event for the "=" button
     function EqualsButtonClick() {
         // Perform the next operation
@@ -58,13 +79,19 @@ document.addEventListener('DOMContentLoaded', function(event) {
             mainInputNumber.value = storedNumber - Number(mainInputNumber.value);
             console.log(mainInputNumber.value)
         }
+        if (nextOperation === "multiplication") {
+            mainInputNumber.value = storedNumber * Number(mainInputNumber.value);
+            console.log(mainInputNumber.value)
+        }
+        if (nextOperation === "division") {
+            mainInputNumber.value = storedNumber / Number(mainInputNumber.value);
+            console.log(mainInputNumber.value)
+        }
 
         // Reset
         storedNumberNumber = null;
         nextOperation = null;
     }
-
-    
     // Add the event listener to the "=" button
     document.getElementsByClassName("genericButton =")[0].addEventListener('click', EqualsButtonClick);
 
