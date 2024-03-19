@@ -7,53 +7,69 @@
 // adding an event listener to the document, which means that functions will be called when the document is fully loaded and not before
 document.addEventListener('DOMContentLoaded', (event) => {
     // getting the input element
-    var inputField = document.getElementById("inputNumber"); 
+    let mainInputNumber = document.getElementById("mainInputNumber"); 
     // getting all the numbered buttons
-    var numberButtons = document.getElementsByClassName("genericButton number");
+    let numberButtons = document.getElementsByClassName("genericButton number");
     console.table({ 'array buttons length': numberButtons.length, 'buttons type': typeof numberButtons });
 
     
     // function that add numbers from buttons to the input field
     function addNumberToInput(num) {
-        if (inputField.value === "0") {
-            inputField.value = num.toString(); // set the input field to the number from the button
+        if (mainInputNumber.value === "0") {
+            mainInputNumber.value = num.toString(); // set the input field to the number from the button
         } else {
-            inputField.value += num.toString(); // concatenate the number from the button to the input field
+            mainInputNumber.value += num.toString(); // concatenate the number from the button to the input field
         }
     }
 
-    // creating variables for the current number and the next operation
-    var storedNumber = null;
-    var nextOperation = null;
+    // creating letiables for the current number and the next operation
+    let storedNumber = null;
+    let nextOperation = null;
     // function takes first number and stores it and resets the input field
-    function AdditionButtonClick() { // CAN MAYBE BE 1 FUNCTION FOR ALL OPERATIONS  
-        storedNumber = Number(inputField.value); // store number pressed before the operation
+    function additionButtonClick() { // #TODO CAN MAYBE BE 1 FUNCTION FOR ALL OPERATIONS  
+        storedNumber = Number(mainInputNumber.value); // store number pressed before the operation
         console.log("current number = " + storedNumber);
         nextOperation = "addition"; // set the next operation to addition
         console.log("next operation = " + nextOperation);
-        inputField.value = 0; // reset input field
+        mainInputNumber.value = 0; // reset input field
     }
+     // adding listener to addition button
+    document.getElementsByClassName("blueButton addition")[0].addEventListener("click", additionButtonClick);
+    
+     // same as addition
+    function subtractionButtonClick() {   
+        storedNumber = Number(mainInputNumber.value); // store number pressed before the operation
+        console.log("current number = " + storedNumber);
+        nextOperation = "subtraction"; // set the next operation to addition
+        console.log("next operation = " + nextOperation);
+        mainInputNumber.value = 0; // reset input field
+    }
+    document.getElementsByClassName("blueButton subtraction")[0].addEventListener("click", subtractionButtonClick);
 
-    // adding listener to addition button
-    document.getElementsByClassName("blueButton +")[0].addEventListener("click", AdditionButtonClick); // exstracting first index of the collection (getElementsByClassName returns collection of html elements)
 
     // Function to handle the click event for the "=" button
     function EqualsButtonClick() {
         // Perform the next operation
         if (nextOperation === "addition") {
-            inputField.value = storedNumber + Number(inputField.value);
-            console.log(inputField.value)
+            mainInputNumber.value = storedNumber + Number(mainInputNumber.value);
+            console.log(mainInputNumber.value)
         }    
+        if (nextOperation === "subtraction") {
+            mainInputNumber.value = storedNumber - Number(mainInputNumber.value);
+            console.log(mainInputNumber.value)
+        }
 
         // Reset
         storedNumberNumber = null;
         nextOperation = null;
     }
+
+    
     // Add the event listener to the "=" button
     document.getElementsByClassName("genericButton =")[0].addEventListener('click', EqualsButtonClick);
 
     // adding a listener to each button
-    for (var i = 0; i < numberButtons.length; i++) { // loop through all the buttons, start from 0 and end at the length of the buttons (i < buttons.length) (i++ means increment by 1)
+    for (let i = 0; i < numberButtons.length; i++) { // loop through all the buttons, start from 0 and end at the length of the buttons (i < buttons.length) (i++ means increment by 1)
         numberButtons[i].addEventListener('click', function() { // add an event listener to each button, where the event is a click
             addNumberToInput(Number(this.value)); // every click will call the addNumberToInput function
         });
