@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function(event) {
     var inputField = document.getElementById("inputNumber");
     var numberButtons = document.getElementsByClassName("genericButton number");
     console.table({ 'array buttons length': numberButtons.length, 'buttons type': typeof numberButtons });
